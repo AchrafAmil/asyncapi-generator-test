@@ -1,4 +1,4 @@
-name: Publish Documentation Guides to docs.nabla.dev
+name: Test asyncapi docgen
 
 on: workflow_dispatch
 
