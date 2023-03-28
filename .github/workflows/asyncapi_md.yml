@@ -9,8 +9,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: install generator
-        run: npm install -g @asyncapi/generator && ag doc.yaml @asyncapi/markdown-template@v1.2.1 -o generated -p toc=false -p outFilename=doc.md
+      - name: generate md
+        run: |
+          npm install -g @asyncapi/generator
+          ag doc.yaml @asyncapi/markdown-template@v1.2.1 -o generated -p toc=false -p outFilename=doc.md
 
       - name: Print generated .md
         run: cat generated/doc.md
