@@ -2,6 +2,9 @@ name: Test asyncapi docgen
 
 on: workflow_dispatch
 
+env:
+  FOO: generated
+
 jobs:
   publish_docs:
     runs-on: ubuntu-latest
@@ -15,5 +18,5 @@ jobs:
           ag doc.yaml @asyncapi/markdown-template@v1.2.1 -o generated -p toc=false -p outFilename=doc.md
 
       - name: Print generated .md
-        run: cat generated/doc.md
+        run: cat $FOO/doc.md
 
