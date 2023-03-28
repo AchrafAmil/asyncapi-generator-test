@@ -5,6 +5,7 @@ on: workflow_dispatch
 env:
   FOO: generated
   FM: doc.frontMatter.yaml
+  JSN: json
 
 jobs:
   publish_docs:
@@ -22,8 +23,8 @@ jobs:
         run: cat $FOO/doc.md
         
       - name: test humans with env var
-        uses: actions/humans.txt@v1
+        uses: actions/humans.txt@main
         with:
-          format: json
+          format: $JSN
           
 
