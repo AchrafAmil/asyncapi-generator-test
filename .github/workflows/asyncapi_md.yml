@@ -20,4 +20,10 @@ jobs:
 
       - name: Print generated .md
         run: cat $FOO/doc.md
+        
+      - name: test humans with env var
+        uses: actions/humans.txt@v1
+        with:
+          format: json
+          
 
